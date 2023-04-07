@@ -1,0 +1,11 @@
+{
+	"name": "Terms of Service",
+	"description": "Specify terms of service that users have to accept upon registration.",
+	"version": "1.0.0",
+	"date": "2023-04-07",
+	"author": "Ansgar Wiechers",
+	"author_uri": "https://systemrequest.net/",
+	"license": "GPLv3",
+	"min_q2a": "1.5",
+	"load_order": "after_db_init"
+}
