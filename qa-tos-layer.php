@@ -38,7 +38,12 @@ class qa_html_theme_layer extends qa_html_theme_base {
 	}
 
 	public function form($form) {
-		if (!qa_is_logged_in() and ($this->template === 'ask' or ($this->template === 'question' and $form['title'] === qa_lang_html('question/your_answer_title')))) {
+		$userinput_titles = [
+			qa_lang_html('question/your_answer_title'),
+			qa_lang_html('question/your_comment_a'),
+			qa_lang_html('question/your_comment_q'),
+		];
+		if (!qa_is_logged_in() and ($this->template === 'ask' or ($this->template === 'question' and in_array($form['title'], $userinput_titles, true)))) {
 			$form['fields'] += [
 				'tos' => [
 					'type'  => 'custom',
