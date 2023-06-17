@@ -59,7 +59,7 @@ class qa_html_theme_layer extends qa_html_theme_base {
 		$result     = qa_db_read_one_assoc(qa_db_query_sub('SELECT title,tags FROM ^pages WHERE pageid=#;', $pageid));
 		$tos_path   = qa_path($result['tags'], null, qa_path_to_root());
 		$title      = qa_html($result['title']);
-		$subst_text = empty($tos_path) ? $title : ('<a href="' . qa_html($tos_path) . '">' . $title . '</a>');
+		$subst_text = empty($tos_path) ? $title : ('<a href="' . qa_html($tos_path) . '">$1</a>');
 		return preg_replace('/\^1(.*?)\^2/', $subst_text, qa_lang_html($identifier));
 	}
 
